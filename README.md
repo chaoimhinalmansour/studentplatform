@@ -1,10 +1,14 @@
-# UNLOCK 教学资料库
+# 学生平台
+
+首页包含听力练习、教学与讲评、写作复盘。写作复盘提供自制的 Task 1 和 Task 2 示例，展示原文批注、思维复盘、表达讲评和学习小结。
+
+## UNLOCK 教学资料
 
 Book 2–3 的课堂音频、题目讲评与 H1–H3 课后答案整合在同一入口。顶部切换“课内 / 课后”，保留册和单元位置。
 
 ## 使用
 
-访问 https://chaoimhinalmansour.github.io/unlockanswers.github.io/ ，或完整下载后打开 `index.html`。下载版可在断网环境使用；请保留 `homework.html` 与 `assets` 目录。
+访问 https://chaoimhinalmansour.github.io/studentplatform/ ，或完整下载后打开 `index.html`。下载版可在断网环境使用；请保留 `homework.html` 与 `assets` 目录。
 
 - 课内：32 份 LS/RW 课件对应的课堂音频活动，125 段录音。
 - 课后：16 个单元、H1–H3、听说读写共 4,800 题，162 段录音。
@@ -16,3 +20,7 @@ Book 2–3 的课堂音频、题目讲评与 H1–H3 课后答案整合在同一
 Windows Edge 已作断网功能验证。Mac 和鸿蒙电脑完成兼容代码审查，尚未在对应实体设备实测。若浏览器限制本地媒体，使用页面提供的本地文件选择入口。
 
 配套 PPT 压缩包分 Book 2 / Book 3、U1–U4 / U5–U8，各包独立使用。音频按钮连接包内资料库对应活动，原 PPT 内嵌媒体保留作为备用。
+
+## 许可
+
+站点代码按 [MIT](LICENSE) 许可发布。第三方教材、音频和其他教学资料的权利由其原权利方保留。
