@@ -5,6 +5,7 @@ const views = ['source', 'thought', 'language', 'summary'];
 const byId = id => document.getElementById(id);
 const tabs = Array.from(document.querySelectorAll('[data-view]'));
 const sourcePanel = byId('panel-source');
+const thoughtPanel = byId('panel-thought');
 const figurePanel = byId('task-figures');
 const chars = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'};
 const escapeHtml = text => String(text).replace(/[&<>"']/g, char => chars[char]);
@@ -12,7 +13,9 @@ const noteFor = id => sample.issues.find(note => note.id === id);
 let sample;
 let selected;
 let frame;
+let mapFrame;
 const resize = new ResizeObserver(scheduleNotes);
+const mapResize = new ResizeObserver(scheduleMap);
 
 function showView(view) {
   for (const tab of tabs) {
@@ -22,6 +25,7 @@ function showView(view) {
     byId(`panel-${tab.dataset.view}`).hidden = !active;
   }
   if (view === 'source') scheduleNotes();
+  if (view === 'thought') drawMapWires();
 }
 
 function reveal(node) {
@@ -37,7 +41,7 @@ function drawFigures() {
   figurePanel.innerHTML = figures.map((figure, index) => {
     const head = figure.years.map(year => `<th scope="col">${year}</th>`).join('');
     const rows = figure.series.map(series => `<tr><th scope="row">${escapeHtml(series.name)}</th>${series.values.map(value => `<td>${value}</td>`).join('')}</tr>`).join('');
-    return `<figure id="figure-${index + 1}"><figcaption>${escapeHtml(figure.title)}</figcaption>${figure.svg}<details class="figure-values"><summary>查看数据表</summary><table><thead><tr><th scope="col">${escapeHtml(figure.unit)}</th>${head}</tr></thead><tbody>${rows}</tbody></table></details></figure>`;
+    return `<figure id="figure-${index + 1}"><figcaption>${escapeHtml(figure.title)}</figcaption><img class="question-chart" src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.title)}"><details class="figure-values"><summary>查看数据表</summary><table><thead><tr><th scope="col">${escapeHtml(figure.unit)}</th>${head}</tr></thead><tbody>${rows}</tbody></table></details></figure>`;
   }).join('');
 }
 
@@ -62,13 +66,55 @@ function drawParagraph(text, index) {
   return `<p class="paragraph" id="paragraph-${index + 1}" lang="en">${marked}${escapeHtml(text.slice(cursor))}</p>`;
 }
 
+function drawAssessment() {
+  const criterionNames = {
+    TA: '任务完成情况',
+    TR: '任务回应',
+    CC: '连贯与衔接',
+    LR: '词汇资源',
+    GRA: '语法多样性与准确性'
+  };
+  const wordStatus = sample.minimumMet ? '达到' : '未达到';
+  const rows = sample.assessment.criteria.map(item => `
+    <tr>
+      <th scope="row">
+        <span class="criterion-name">${criterionNames[item.code]}</span>
+        <span class="criterion-code" lang="en">${item.code}</span>
+      </th>
+      <td class="criterion-score"><span>${item.score}</span></td>
+      <td class="criterion-feedback">${escapeHtml(item.text)}</td>
+    </tr>`).join('');
+  return `
+    <section class="assessment" aria-labelledby="assessment-heading">
+      <header class="assessment-title">
+        <div>
+          <h3 id="assessment-heading">四项评价</h3>
+          <p>原文 ${sample.wordCount} 词，${wordStatus} ${sample.minimum} 词要求。</p>
+        </div>
+        <div class="assessment-total">
+          <span>单篇估分</span>
+          <strong>${sample.assessment.band}</strong>
+        </div>
+      </header>
+      <div class="assessment-frame">
+        <table class="assessment-table">
+          <caption class="sr-only">分项评分与评语</caption>
+          <colgroup><col class="criterion-col"><col class="score-col"><col></colgroup>
+          <thead>
+            <tr><th scope="col">评分项</th><th scope="col" class="criterion-score">分数</th><th scope="col">评语</th></tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </section>`;
+}
+
 function drawSource() {
   const notes = sample.issues.map(issue => {
     const caption = issue.track === 'thought' ? '看思维复盘' : '看表达讲评';
     return `<article class="margin-note" data-note-card="${issue.id}" id="note-${issue.id}"><button class="note-body" type="button" data-note="${issue.id}" aria-pressed="false" aria-controls="paragraph-${issue.paragraph}"><span class="number">${issue.id}</span><span><strong>${escapeHtml(issue.label)}</strong><span>${escapeHtml(issue.text)}</span></span></button><button class="text-button note-more" type="button" data-lesson="${issue.id}">${caption}</button></article>`;
   }).join('');
-  const grades = sample.assessment.criteria.map(item => `<div class="criterion"><dt>${item.code} · ${item.score}</dt><dd>${escapeHtml(item.text)}</dd></div>`).join('');
-  sourcePanel.innerHTML = `<div class="reading"><article class="paper"><header class="paper-top"><h3>学生原文</h3><span>${sample.wordCount} 词</span></header>${sample.paragraphs.map(drawParagraph).join('')}</article><aside aria-label="页边批注"><header class="margin-top"><h3>页边批注</h3><span>${sample.issues.length} 处</span></header><div class="notes">${notes}</div></aside></div><section class="assessment"><header class="assessment-title"><h3>四项评价</h3><p>原文 ${sample.wordCount} 词 · 达到 ${sample.minimum} 词要求 · 示例预估 ${sample.assessment.band}</p></header><dl>${grades}</dl></section>`;
+  sourcePanel.innerHTML = `<div class="reading"><article class="paper"><header class="paper-top"><h3>学生原文</h3><span>${sample.wordCount} 词</span></header>${sample.paragraphs.map(drawParagraph).join('')}</article><aside aria-label="页边批注"><header class="margin-top"><h3>页边批注</h3><span>${sample.issues.length} 处</span></header><div class="notes">${notes}</div></aside></div>${drawAssessment()}`;
   resize.disconnect();
   resize.observe(sourcePanel.querySelector('.paper'));
 }
@@ -110,34 +156,79 @@ function selectIssue(id) {
 }
 
 function drawThought() {
-  const outline = sample.outline ? `<details class="outline" open><summary>样稿的原始中文提纲</summary><ul>${sample.outline.map(row => `<li><strong>${escapeHtml(row.title)}</strong>　${escapeHtml(row.text)}</li>`).join('')}</ul></details>` : '';
-  const chains = sample.chains.map((chain, i) => {
-    const steps = chain.steps.map((step, j) => {
-      const gap = /缺|跳步|待核对/.test(step.label);
-      return `<li><button class="node${gap ? ' gap' : ''}" type="button" data-step="${i}-${j}" aria-controls="chain-detail-${i}" aria-pressed="false"><span>${escapeHtml(step.label)}</span><strong>${escapeHtml(step.text)}</strong></button></li>`;
+  const map = sample.mindmap;
+  const outline = sample.outline ? `<details class="outline mindmap-outline"><summary>样稿的原始中文提纲</summary><ul>${sample.outline.map(row => `<li><strong>${escapeHtml(row.title)}</strong>　${escapeHtml(row.text)}</li>`).join('')}</ul></details>` : '';
+  const branches = map.branches.map(branch => {
+    const nodes = branch.nodes.map((node, i) => {
+      const follows = branch.sequence && i > 0;
+      const parent = follows ? `node-${branch.nodes[i - 1].id}` : `branch-${branch.id}`;
+      const flag = node.issue ? `<span class="map-number">${node.issue}</span>` : '';
+      return `<li><button class="map-node${node.issue ? ' map-gap' : ''}" type="button" id="mind-node-${node.id}" data-mind-node="${node.id}" data-key="node-${node.id}" data-parent="${parent}"${follows ? ' data-vertical' : ''} aria-controls="mind-inspector" aria-pressed="false"><span class="map-node-label">${flag}${escapeHtml(node.label)}</span><strong>${escapeHtml(node.title)}</strong></button></li>`;
     }).join('');
-    return `<section class="chain"><h3>${escapeHtml(chain.title)}</h3><ol class="steps">${steps}</ol><div class="chain-detail" id="chain-detail-${i}" aria-live="polite"></div><p class="practice"><strong>留给你的练习</strong>　${escapeHtml(chain.prompt)}</p></section>`;
+    return `<section class="map-branch"><div class="map-topic" data-key="branch-${branch.id}" data-parent="root"><span>${escapeHtml(branch.label)}</span><strong>${escapeHtml(branch.title)}</strong></div><ul class="map-leaves${branch.sequence ? ' map-sequence' : ''}">${nodes}</ul></section>`;
   }).join('');
-  byId('panel-thought').innerHTML = `<p class="section-intro">${sample.outline ? '沿原提纲和成稿逐步对照。点节点，查看这一步的依据。' : '把图表里的事实与原文中的判断对照。点节点，查看证据支持到哪一步。'}</p>${outline}${chains}`;
-  sample.chains.forEach((_, index) => selectStep(index, 0));
+  const issues = map.branches.flatMap(branch => branch.nodes).filter(node => node.issue).length;
+  thoughtPanel.innerHTML = `<header class="mindmap-heading"><div><h3>思维导图</h3><p>点带编号的节点，查看这一步哪里有问题、怎么想、怎么做。</p></div><span class="map-total">${issues} 处待复盘</span></header><div class="mindmap-layout"><div id="mind-board" class="mind-board" aria-label="${escapeHtml(map.title)}"><svg class="map-wires" aria-hidden="true"></svg><div class="map-root" data-key="root"><span>${escapeHtml(sample.label)}</span><strong>${escapeHtml(map.title)}</strong><p>${escapeHtml(map.note)}</p></div><div class="map-branches">${branches}</div></div><aside id="mind-inspector" class="mind-inspector" aria-label="选中节点的讲评" aria-live="polite"></aside></div>${outline}`;
+  mapResize.disconnect();
+  mapResize.observe(byId('mind-board'));
+  selectMindNode(map.initial);
 }
 
-function selectStep(chainIndex, stepIndex) {
-  const step = sample.chains[chainIndex].steps[stepIndex];
-  const detail = byId(`chain-detail-${chainIndex}`);
-  for (const button of detail.parentElement.querySelectorAll('[data-step]')) button.setAttribute('aria-pressed', String(button.dataset.step === `${chainIndex}-${stepIndex}`));
-  const issue = step.issue && noteFor(step.issue);
-  let evidence = '';
-  if (step.outline !== undefined) {
-    evidence = `<p class="quote">${escapeHtml(sample.outline[step.outline].text)}</p>`;
-  } else if (step.quote || issue) {
-    evidence = `<p class="quote" lang="en">${escapeHtml(step.quote || issue.quote)}</p>`;
+function scheduleMap() {
+  cancelAnimationFrame(mapFrame);
+  mapFrame = requestAnimationFrame(drawMapWires);
+}
+
+function drawMapWires() {
+  const board = byId('mind-board');
+  if (!board || thoughtPanel.hidden || matchMedia('(max-width: 650px)').matches) return;
+  const bounds = board.getBoundingClientRect();
+  const wireLayer = board.querySelector('svg');
+  const elements = new Map(Array.from(board.querySelectorAll('[data-key]'), element => [element.dataset.key, element]));
+  const active = new Set();
+  let current = board.querySelector('[aria-pressed="true"]');
+  while (current) {
+    active.add(current.dataset.key);
+    current = elements.get(current.dataset.parent);
   }
-  let target = '';
-  if (issue) target = `<button class="text-button" type="button" data-return="${issue.id}">回到原文批注 ${issue.id}</button>`;
-  else if (step.paragraph) target = `<button class="text-button" type="button" data-paragraph="${step.paragraph}">看原文第 ${step.paragraph} 段</button>`;
-  else if (step.source) target = `<button class="text-button" type="button" data-figure="${step.source.endsWith('1') ? '1' : '2'}">查看${escapeHtml(step.source)}</button>`;
-  detail.innerHTML = `<p>${escapeHtml(step.detail)}</p>${evidence}${target}`;
+  wireLayer.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
+  const paths = [];
+  for (const target of board.querySelectorAll('[data-parent]')) {
+    const a = elements.get(target.dataset.parent).getBoundingClientRect();
+    const b = target.getBoundingClientRect();
+    const vertical = target.hasAttribute('data-vertical');
+    const x1 = (vertical ? a.left + a.width / 2 : a.right) - bounds.left;
+    const x2 = (vertical ? b.left + b.width / 2 : b.left) - bounds.left;
+    const y1 = (vertical ? a.bottom : a.top + a.height / 2) - bounds.top;
+    const y2 = (vertical ? b.top : b.top + b.height / 2) - bounds.top;
+    const mid = (x1 + x2) / 2;
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', vertical ? `M${x1} ${y1} L${x2} ${y2}` : `M${x1} ${y1} C${mid} ${y1},${mid} ${y2},${x2} ${y2}`);
+    if (target.classList.contains('map-gap')) path.classList.add('wire-gap');
+    if (active.has(target.dataset.key)) path.classList.add('wire-active');
+    paths.push(path);
+  }
+  wireLayer.replaceChildren(...paths);
+}
+
+function selectMindNode(id) {
+  const map = sample.mindmap;
+  const branch = map.branches.find(group => group.nodes.some(node => node.id === id));
+  const node = branch.nodes.find(item => item.id === id);
+  const issue = node.issue && noteFor(node.issue);
+  for (const button of thoughtPanel.querySelectorAll('[data-mind-node]')) button.setAttribute('aria-pressed', String(button.dataset.mindNode === id));
+  const badge = issue ? `<span class="map-number">${issue.id}</span>` : '';
+  const quote = node.quote || (issue && issue.quote);
+  const evidence = quote ? `<blockquote class="map-evidence"><span>成稿原句</span><p lang="en">${escapeHtml(quote)}</p></blockquote>` : '';
+  const outline = node.outline !== undefined ? `<blockquote class="map-evidence"><span>中文提纲</span><p>${escapeHtml(sample.outline[node.outline].text)}</p></blockquote>` : '';
+  const coaching = issue ? `<dl class="map-coaching"><div><dt>哪里没做好</dt><dd>${escapeHtml(node.detail)}</dd></div><div><dt>怎么想</dt><dd>${escapeHtml(node.think)}</dd></div><div><dt>怎么做</dt><dd>${escapeHtml(node.action)}</dd></div></dl>` : `<p class="map-proof">${escapeHtml(node.detail)}</p>`;
+  const source = issue ? `<button class="text-button" type="button" data-return="${issue.id}">回到原文批注 ${issue.id}</button>` : node.paragraph ? `<button class="text-button" type="button" data-paragraph="${node.paragraph}">看原文第 ${node.paragraph} 段</button>` : '';
+  const figure = node.figure ? `<button class="text-button" type="button" data-figure="${node.figure}">查看图 ${node.figure}</button>` : '';
+  const panel = byId('mind-inspector');
+  panel.classList.toggle('inspect-gap', Boolean(issue));
+  panel.dataset.currentNode = id;
+  panel.innerHTML = `<p class="map-breadcrumb">${escapeHtml(branch.label)} ${escapeHtml(branch.title)}</p><p class="map-inspector-label">${badge}${escapeHtml(node.label)}</p><h3>${escapeHtml(node.title)}</h3>${evidence}${outline}${coaching}<div class="map-links">${source}${figure}<button class="text-button map-back" type="button" data-map-back>回到导图</button></div>`;
+  drawMapWires();
 }
 
 function drawLessons() {
@@ -156,25 +247,23 @@ function openLesson(id) {
   if (issue.track === 'language') {
     reveal(byId(`lesson-${id}`));
   } else {
-    const chainIndex = sample.chains.findIndex(chain => chain.steps.some(step => step.issue === id));
-    const stepIndex = sample.chains[chainIndex].steps.findIndex(step => step.issue === id);
-    selectStep(chainIndex, stepIndex);
-    reveal(document.querySelector(`[data-step="${chainIndex}-${stepIndex}"]`));
+    selectMindNode(id);
+    reveal(matchMedia('(max-width: 980px)').matches ? byId('mind-inspector') : byId(`mind-node-${id}`));
   }
 }
 
 function openSample() {
-  const id = location.hash.slice(1);
+  const [id, requestedView] = location.hash.slice(1).split('/');
   sample = samples.find(item => item.id === id) || samples[0];
   for (const button of document.querySelectorAll('[data-sample]')) button.setAttribute('aria-pressed', String(button.dataset.sample === sample.id));
-  byId('task-label').textContent = `${sample.label} · ${sample.type}`;
+  byId('task-label').textContent = `${sample.label} ${sample.type}`;
   byId('task-title').textContent = sample.title;
   drawFigures();
   drawSource();
   drawThought();
   drawLessons();
   drawSummary();
-  showView('source');
+  showView(views.includes(requestedView) ? requestedView : 'source');
   selectIssue(sample.initial);
 }
 
@@ -185,7 +274,12 @@ document.addEventListener('click', event => {
   if (data.sample) {
     if (sample.id !== data.sample) location.hash = data.sample;
   } else if (data.view) showView(data.view);
-  else if (data.step) selectStep(...data.step.split('-').map(Number));
+  else if (data.mindNode) {
+    selectMindNode(data.mindNode);
+    if (matchMedia('(max-width: 980px)').matches) reveal(byId('mind-inspector'));
+  } else if ('mapBack' in data) {
+    reveal(byId(`mind-node-${byId('mind-inspector').dataset.currentNode}`));
+  }
   else if (data.note) {
     selectIssue(data.note);
     const target = button.classList.contains('pin') ? byId(`note-${selected}`) : sourcePanel.querySelector(`[data-anchor="${selected}"]`);

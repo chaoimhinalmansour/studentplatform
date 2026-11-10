@@ -49,7 +49,7 @@ window.studentPlatformSamples = [
             ]
           }
         ],
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"450\" height=\"245\" viewBox=\"0 0 450 245\" role=\"img\" aria-label=\"图 1　通勤方式占比\"><title>图 1　通勤方式占比</title><rect width=\"450\" height=\"245\" fill=\"#fff\"/><g font-family=\"Arial, Microsoft YaHei, sans-serif\" font-size=\"12\"><text x=\"12\" y=\"19\" fill=\"#515154\">%</text><path d=\"M56,186.0 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"190.0\" fill=\"#515154\" text-anchor=\"end\">0</text><path d=\"M56,142.0 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"146.0\" fill=\"#515154\" text-anchor=\"end\">20</text><path d=\"M56,98.0 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"102.0\" fill=\"#515154\" text-anchor=\"end\">40</text><path d=\"M56,54.0 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"58.0\" fill=\"#515154\" text-anchor=\"end\">60</text><text x=\"56\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2005</text><text x=\"218\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2015</text><text x=\"380\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2025</text><polyline points=\"56,54.0 218,71.6 380,87.0\" fill=\"none\" stroke=\"#0071e3\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"56\" cy=\"54.0\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"64\" y=\"46.0\" fill=\"#0071e3\">60%</text><circle cx=\"218\" cy=\"71.6\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"226\" y=\"63.6\" fill=\"#0071e3\">52%</text><circle cx=\"380\" cy=\"87.0\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"388\" y=\"79.0\" fill=\"#0071e3\">45%</text><path d=\"M56,232 h14\" stroke=\"#0071e3\" stroke-width=\"2.4\"/><text x=\"76\" y=\"236\" fill=\"#515154\">小汽车</text><polyline points=\"56,131.0 218,115.6 380,102.4\" fill=\"none\" stroke=\"#116f60\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"56\" cy=\"131.0\" r=\"3.5\" fill=\"#116f60\"/><text x=\"64\" y=\"123.0\" fill=\"#116f60\">25%</text><circle cx=\"218\" cy=\"115.6\" r=\"3.5\" fill=\"#116f60\"/><text x=\"226\" y=\"107.6\" fill=\"#116f60\">32%</text><circle cx=\"380\" cy=\"102.4\" r=\"3.5\" fill=\"#116f60\"/><text x=\"388\" y=\"94.4\" fill=\"#116f60\">38%</text><path d=\"M178,232 h14\" stroke=\"#116f60\" stroke-width=\"2.4\"/><text x=\"198\" y=\"236\" fill=\"#515154\">公共交通</text><polyline points=\"56,153.0 218,150.8 380,148.6\" fill=\"none\" stroke=\"#8f5317\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"56\" cy=\"153.0\" r=\"3.5\" fill=\"#8f5317\"/><text x=\"64\" y=\"145.0\" fill=\"#8f5317\">15%</text><circle cx=\"218\" cy=\"150.8\" r=\"3.5\" fill=\"#8f5317\"/><text x=\"226\" y=\"142.8\" fill=\"#8f5317\">16%</text><circle cx=\"380\" cy=\"148.6\" r=\"3.5\" fill=\"#8f5317\"/><text x=\"388\" y=\"140.6\" fill=\"#8f5317\">17%</text><path d=\"M300,232 h14\" stroke=\"#8f5317\" stroke-width=\"2.4\"/><text x=\"320\" y=\"236\" fill=\"#515154\">步行或骑车</text></g></svg>"
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NTAiIGhlaWdodD0iMjQ1IiB2aWV3Qm94PSIwIDAgNDUwIDI0NSIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSLlm74gMeOAgOmAmuWLpOaWueW8j+WNoOavlCI+PHRpdGxlPuWbviAx44CA6YCa5Yuk5pa55byP5Y2g5q+UPC90aXRsZT48cmVjdCB3aWR0aD0iNDUwIiBoZWlnaHQ9IjI0NSIgZmlsbD0iI2ZmZiIvPjxnIGZvbnQtZmFtaWx5PSJBcmlhbCwgTWljcm9zb2Z0IFlhSGVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIj48dGV4dCB4PSIxMiIgeT0iMTkiIGZpbGw9IiM1MTUxNTQiPiU8L3RleHQ+PHBhdGggZD0iTTU2LDE4Ni4wIEg0MDQiIHN0cm9rZT0iI2U0ZTRlOCIvPjx0ZXh0IHg9IjQzIiB5PSIxOTAuMCIgZmlsbD0iIzUxNTE1NCIgdGV4dC1hbmNob3I9ImVuZCI+MDwvdGV4dD48cGF0aCBkPSJNNTYsMTQyLjAgSDQwNCIgc3Ryb2tlPSIjZTRlNGU4Ii8+PHRleHQgeD0iNDMiIHk9IjE0Ni4wIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0iZW5kIj4yMDwvdGV4dD48cGF0aCBkPSJNNTYsOTguMCBINDA0IiBzdHJva2U9IiNlNGU0ZTgiLz48dGV4dCB4PSI0MyIgeT0iMTAyLjAiIGZpbGw9IiM1MTUxNTQiIHRleHQtYW5jaG9yPSJlbmQiPjQwPC90ZXh0PjxwYXRoIGQ9Ik01Niw1NC4wIEg0MDQiIHN0cm9rZT0iI2U0ZTRlOCIvPjx0ZXh0IHg9IjQzIiB5PSI1OC4wIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0iZW5kIj42MDwvdGV4dD48dGV4dCB4PSI1NiIgeT0iMjEyIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4yMDA1PC90ZXh0Pjx0ZXh0IHg9IjIxOCIgeT0iMjEyIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4yMDE1PC90ZXh0Pjx0ZXh0IHg9IjM4MCIgeT0iMjEyIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4yMDI1PC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjU2LDU0LjAgMjE4LDcxLjYgMzgwLDg3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwNzFlMyIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSI1NiIgY3k9IjU0LjAiIHI9IjMuNSIgZmlsbD0iIzAwNzFlMyIvPjx0ZXh0IHg9IjY0IiB5PSI0Ni4wIiBmaWxsPSIjMDA3MWUzIj42MCU8L3RleHQ+PGNpcmNsZSBjeD0iMjE4IiBjeT0iNzEuNiIgcj0iMy41IiBmaWxsPSIjMDA3MWUzIi8+PHRleHQgeD0iMjI2IiB5PSI2My42IiBmaWxsPSIjMDA3MWUzIj41MiU8L3RleHQ+PGNpcmNsZSBjeD0iMzgwIiBjeT0iODcuMCIgcj0iMy41IiBmaWxsPSIjMDA3MWUzIi8+PHRleHQgeD0iMzg4IiB5PSI3OS4wIiBmaWxsPSIjMDA3MWUzIj40NSU8L3RleHQ+PHBhdGggZD0iTTU2LDIzMiBoMTQiIHN0cm9rZT0iIzAwNzFlMyIgc3Ryb2tlLXdpZHRoPSIyLjQiLz48dGV4dCB4PSI3NiIgeT0iMjM2IiBmaWxsPSIjNTE1MTU0Ij7lsI/msb3ovaY8L3RleHQ+PHBvbHlsaW5lIHBvaW50cz0iNTYsMTMxLjAgMjE4LDExNS42IDM4MCwxMDIuNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTE2ZjYwIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjU2IiBjeT0iMTMxLjAiIHI9IjMuNSIgZmlsbD0iIzExNmY2MCIvPjx0ZXh0IHg9IjY0IiB5PSIxMjMuMCIgZmlsbD0iIzExNmY2MCI+MjUlPC90ZXh0PjxjaXJjbGUgY3g9IjIxOCIgY3k9IjExNS42IiByPSIzLjUiIGZpbGw9IiMxMTZmNjAiLz48dGV4dCB4PSIyMjYiIHk9IjEwNy42IiBmaWxsPSIjMTE2ZjYwIj4zMiU8L3RleHQ+PGNpcmNsZSBjeD0iMzgwIiBjeT0iMTAyLjQiIHI9IjMuNSIgZmlsbD0iIzExNmY2MCIvPjx0ZXh0IHg9IjM4OCIgeT0iOTQuNCIgZmlsbD0iIzExNmY2MCI+MzglPC90ZXh0PjxwYXRoIGQ9Ik0xNzgsMjMyIGgxNCIgc3Ryb2tlPSIjMTE2ZjYwIiBzdHJva2Utd2lkdGg9IjIuNCIvPjx0ZXh0IHg9IjE5OCIgeT0iMjM2IiBmaWxsPSIjNTE1MTU0Ij7lhazlhbHkuqTpgJo8L3RleHQ+PHBvbHlsaW5lIHBvaW50cz0iNTYsMTUzLjAgMjE4LDE1MC44IDM4MCwxNDguNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGY1MzE3IiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjU2IiBjeT0iMTUzLjAiIHI9IjMuNSIgZmlsbD0iIzhmNTMxNyIvPjx0ZXh0IHg9IjY0IiB5PSIxNDUuMCIgZmlsbD0iIzhmNTMxNyI+MTUlPC90ZXh0PjxjaXJjbGUgY3g9IjIxOCIgY3k9IjE1MC44IiByPSIzLjUiIGZpbGw9IiM4ZjUzMTciLz48dGV4dCB4PSIyMjYiIHk9IjE0Mi44IiBmaWxsPSIjOGY1MzE3Ij4xNiU8L3RleHQ+PGNpcmNsZSBjeD0iMzgwIiBjeT0iMTQ4LjYiIHI9IjMuNSIgZmlsbD0iIzhmNTMxNyIvPjx0ZXh0IHg9IjM4OCIgeT0iMTQwLjYiIGZpbGw9IiM4ZjUzMTciPjE3JTwvdGV4dD48cGF0aCBkPSJNMzAwLDIzMiBoMTQiIHN0cm9rZT0iIzhmNTMxNyIgc3Ryb2tlLXdpZHRoPSIyLjQiLz48dGV4dCB4PSIzMjAiIHk9IjIzNiIgZmlsbD0iIzUxNTE1NCI+5q2l6KGM5oiW6aqR6L2mPC90ZXh0PjwvZz48L3N2Zz4="
       },
       {
         "title": "图 2　单程平均通勤时间",
@@ -77,7 +77,7 @@ window.studentPlatformSamples = [
             ]
           }
         ],
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"450\" height=\"245\" viewBox=\"0 0 450 245\" role=\"img\" aria-label=\"图 2　单程平均通勤时间\"><title>图 2　单程平均通勤时间</title><rect width=\"450\" height=\"245\" fill=\"#fff\"/><g font-family=\"Arial, Microsoft YaHei, sans-serif\" font-size=\"12\"><text x=\"12\" y=\"19\" fill=\"#515154\">分钟</text><path d=\"M56,186.0 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"190.0\" fill=\"#515154\" text-anchor=\"end\">0</text><path d=\"M56,151.8 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"155.8\" fill=\"#515154\" text-anchor=\"end\">10</text><path d=\"M56,117.6 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"121.6\" fill=\"#515154\" text-anchor=\"end\">20</text><path d=\"M56,83.3 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"87.3\" fill=\"#515154\" text-anchor=\"end\">30</text><path d=\"M56,49.1 H404\" stroke=\"#e4e4e8\"/><text x=\"43\" y=\"53.1\" fill=\"#515154\" text-anchor=\"end\">40</text><text x=\"56\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2005</text><text x=\"218\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2015</text><text x=\"380\" y=\"212\" fill=\"#515154\" text-anchor=\"middle\">2025</text><polyline points=\"56,79.9 218,66.2 380,52.5\" fill=\"none\" stroke=\"#0071e3\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"56\" cy=\"79.9\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"64\" y=\"71.9\" fill=\"#0071e3\">31</text><circle cx=\"218\" cy=\"66.2\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"226\" y=\"58.2\" fill=\"#0071e3\">35</text><circle cx=\"380\" cy=\"52.5\" r=\"3.5\" fill=\"#0071e3\"/><text x=\"388\" y=\"44.5\" fill=\"#0071e3\">39</text><path d=\"M56,232 h14\" stroke=\"#0071e3\" stroke-width=\"2.4\"/><text x=\"76\" y=\"236\" fill=\"#515154\">平均通勤时间</text></g></svg>"
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NTAiIGhlaWdodD0iMjQ1IiB2aWV3Qm94PSIwIDAgNDUwIDI0NSIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSLlm74gMuOAgOWNleeoi+W5s+Wdh+mAmuWLpOaXtumXtCI+PHRpdGxlPuWbviAy44CA5Y2V56iL5bmz5Z2H6YCa5Yuk5pe26Ze0PC90aXRsZT48cmVjdCB3aWR0aD0iNDUwIiBoZWlnaHQ9IjI0NSIgZmlsbD0iI2ZmZiIvPjxnIGZvbnQtZmFtaWx5PSJBcmlhbCwgTWljcm9zb2Z0IFlhSGVpLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIj48dGV4dCB4PSIxMiIgeT0iMTkiIGZpbGw9IiM1MTUxNTQiPuWIhumSnzwvdGV4dD48cGF0aCBkPSJNNTYsMTg2LjAgSDQwNCIgc3Ryb2tlPSIjZTRlNGU4Ii8+PHRleHQgeD0iNDMiIHk9IjE5MC4wIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0iZW5kIj4wPC90ZXh0PjxwYXRoIGQ9Ik01NiwxNTEuOCBINDA0IiBzdHJva2U9IiNlNGU0ZTgiLz48dGV4dCB4PSI0MyIgeT0iMTU1LjgiIGZpbGw9IiM1MTUxNTQiIHRleHQtYW5jaG9yPSJlbmQiPjEwPC90ZXh0PjxwYXRoIGQ9Ik01NiwxMTcuNiBINDA0IiBzdHJva2U9IiNlNGU0ZTgiLz48dGV4dCB4PSI0MyIgeT0iMTIxLjYiIGZpbGw9IiM1MTUxNTQiIHRleHQtYW5jaG9yPSJlbmQiPjIwPC90ZXh0PjxwYXRoIGQ9Ik01Niw4My4zIEg0MDQiIHN0cm9rZT0iI2U0ZTRlOCIvPjx0ZXh0IHg9IjQzIiB5PSI4Ny4zIiBmaWxsPSIjNTE1MTU0IiB0ZXh0LWFuY2hvcj0iZW5kIj4zMDwvdGV4dD48cGF0aCBkPSJNNTYsNDkuMSBINDA0IiBzdHJva2U9IiNlNGU0ZTgiLz48dGV4dCB4PSI0MyIgeT0iNTMuMSIgZmlsbD0iIzUxNTE1NCIgdGV4dC1hbmNob3I9ImVuZCI+NDA8L3RleHQ+PHRleHQgeD0iNTYiIHk9IjIxMiIgZmlsbD0iIzUxNTE1NCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAwNTwvdGV4dD48dGV4dCB4PSIyMTgiIHk9IjIxMiIgZmlsbD0iIzUxNTE1NCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAxNTwvdGV4dD48dGV4dCB4PSIzODAiIHk9IjIxMiIgZmlsbD0iIzUxNTE1NCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNTwvdGV4dD48cG9seWxpbmUgcG9pbnRzPSI1Niw3OS45IDIxOCw2Ni4yIDM4MCw1Mi41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDcxZTMiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGNpcmNsZSBjeD0iNTYiIGN5PSI3OS45IiByPSIzLjUiIGZpbGw9IiMwMDcxZTMiLz48dGV4dCB4PSI2NCIgeT0iNzEuOSIgZmlsbD0iIzAwNzFlMyI+MzE8L3RleHQ+PGNpcmNsZSBjeD0iMjE4IiBjeT0iNjYuMiIgcj0iMy41IiBmaWxsPSIjMDA3MWUzIi8+PHRleHQgeD0iMjI2IiB5PSI1OC4yIiBmaWxsPSIjMDA3MWUzIj4zNTwvdGV4dD48Y2lyY2xlIGN4PSIzODAiIGN5PSI1Mi41IiByPSIzLjUiIGZpbGw9IiMwMDcxZTMiLz48dGV4dCB4PSIzODgiIHk9IjQ0LjUiIGZpbGw9IiMwMDcxZTMiPjM5PC90ZXh0PjxwYXRoIGQ9Ik01NiwyMzIgaDE0IiBzdHJva2U9IiMwMDcxZTMiIHN0cm9rZS13aWR0aD0iMi40Ii8+PHRleHQgeD0iNzYiIHk9IjIzNiIgZmlsbD0iIzUxNTE1NCI+5bmz5Z2H6YCa5Yuk5pe26Ze0PC90ZXh0PjwvZz48L3N2Zz4="
       }
     ],
     "paragraphs": [
@@ -115,7 +115,7 @@ window.studentPlatformSamples = [
         "quote": "a decrease of 15%",
         "scope": "phrase",
         "track": "thought",
-        "label": "图 1 · 单位",
+        "label": "图 1 的单位",
         "text": "60%降到45%，两数相减是15个百分点。以60%为基数计算，降幅是25%。",
         "start": 163
       },
@@ -149,59 +149,9 @@ window.studentPlatformSamples = [
         "quote": "bus services became slower as more people used them",
         "scope": "phrase",
         "track": "thought",
-        "label": "图 2 · 推断",
+        "label": "图 2 的推断",
         "text": "图2给的是整体平均通勤时间。它没有单列公交用时，也没有给出时间上升的原因。",
         "start": 146
-      }
-    ],
-    "chains": [
-      {
-        "title": "把图表事实连成概括",
-        "prompt": "用三个年份核对哪类方式始终排第一，再想想哪两类之间的差距变化最值得写。",
-        "steps": [
-          {
-            "label": "图1事实",
-            "text": "小汽车始终最多",
-            "detail": "三年的占比分别是60%、52%、45%，每年都高于另外两类。",
-            "source": "图 1"
-          },
-          {
-            "label": "原文已写",
-            "text": "小汽车一开始最多",
-            "detail": "原文概括抓到了起点，却没有说这个领先位置一直保持。",
-            "issue": "01"
-          },
-          {
-            "label": "待核对",
-            "text": "差距与单位",
-            "detail": "小汽车和公共交通之间的差距从35个百分点缩到7个百分点。两个百分比直接相减得到的是百分点。",
-            "issue": "03"
-          }
-        ]
-      },
-      {
-        "title": "区分观察和原因",
-        "prompt": "遮住你写的原因，只看图2。哪些结论仍然能从轴、单位和数据点直接读出来？",
-        "steps": [
-          {
-            "label": "图2事实",
-            "text": "平均用时由31增至39分钟",
-            "detail": "2005、2015、2025三个时点分别是31、35、39分钟，统计对象是所有通勤者。",
-            "source": "图 2"
-          },
-          {
-            "label": "原文推断",
-            "text": "乘公交的人更多，所以公交变慢",
-            "detail": "成稿把整体平均时间的变化，推到了特定交通方式及其原因。",
-            "issue": "06"
-          },
-          {
-            "label": "缺少证据",
-            "text": "公交单独用时与原因",
-            "detail": "两张图分别给出方式占比和全体平均用时，没有给出各方式各自的时间。",
-            "issue": "06"
-          }
-        ]
       }
     ],
     "thoughtSummary": [
@@ -229,6 +179,7 @@ window.studentPlatformSamples = [
       }
     ],
     "assessment": {
+      "band": "6.5",
       "criteria": [
         {
           "code": "TA",
@@ -250,10 +201,75 @@ window.studentPlatformSamples = [
           "score": 7,
           "text": "能用while作对照，也能用before reaching串联时点，多数句子准确。figures shows有一处主谓一致错误。"
         }
-      ],
-      "band": "6.5"
+      ]
     },
-    "wordCount": 164
+    "wordCount": 164,
+    "mindmap": {
+      "title": "读图、概括与推断",
+      "note": "先看通勤方式，再看平均用时。",
+      "initial": "01",
+      "branches": [
+        {
+          "id": "mode",
+          "label": "图 1",
+          "title": "通勤方式占比",
+          "nodes": [
+            {
+              "id": "ranking",
+              "label": "图上证据",
+              "title": "小汽车三期都最多",
+              "detail": "小汽车为60%、52%、45%，公共交通为25%、32%、38%。小汽车一直领先，两类方式的差距逐步缩小。",
+              "figure": 1
+            },
+            {
+              "id": "01",
+              "issue": "01",
+              "label": "概括不足",
+              "title": "只写了起点谁最多",
+              "detail": "原文只说小汽车一开始占比最高。后两个年份它仍领先，和公共交通的差距却在缩小。概括少了这层变化。",
+              "think": "把「每年谁领先」和「领先多少」分开看。先横着比较同一年，再沿年份看两条线的距离。",
+              "action": "给三个年份各写一组小汽车和公共交通的占比。2005年的差是35个百分点，接着算2015和2025年。最后用一句中文概括谁一直领先、差距怎么变。",
+              "figure": 1
+            },
+            {
+              "id": "03",
+              "issue": "03",
+              "label": "比较口径",
+              "title": "占比差值的单位用错了",
+              "detail": "原句写下降15%。按2005年到2025年比较，小汽车占比从60%降到45%，少了15个百分点。以2005年的占比为基数，降幅是25%。",
+              "think": "先定起止年份，再问你要比较的是两个占比的差，还是以起点为基数的降幅。",
+              "action": "标出起止年份和占比。直接报告从60%降到45%就能说清变化。要写差值，用百分点。要写相对降幅，再把差值除以60%。",
+              "figure": 1
+            }
+          ]
+        },
+        {
+          "id": "time",
+          "label": "图 2",
+          "title": "单程平均用时",
+          "nodes": [
+            {
+              "id": "mean",
+              "label": "图上证据",
+              "title": "全体平均用时由31增至39分钟",
+              "detail": "图2给的是所有通勤者的单程平均时长。三个年份的数据依次为31、35和39分钟。",
+              "figure": 2
+            },
+            {
+              "id": "06",
+              "issue": "06",
+              "label": "推断超出证据",
+              "title": "从整体用时推到公交变慢",
+              "detail": "原文把整体平均用时增加，解释成公交因乘客更多而变慢。图2没有分交通方式列用时，两张图也没有交代原因。",
+              "think": "先看数据统计的是谁，再区分「观察到的变化」和「对变化的解释」。总体平均时长上升，可以由多种变化造成。",
+              "action": "把「平均用时增加」「公交变慢」「乘客多导致公交变慢」分三行写。逐条圈出题图中能支持它的数据，给缺证据的两条注明还需要什么资料。",
+              "figure": 2
+            }
+          ]
+        }
+      ]
+    },
+    "minimumMet": true
   },
   {
     "id": "task2",
@@ -353,60 +369,6 @@ window.studentPlatformSamples = [
         "start": 93
       }
     ],
-    "chains": [
-      {
-        "title": "公交投入如何减少车流",
-        "prompt": "什么条件会让原本开车的人愿意改乘公交？把这一步放在「班次变多」和「车流减少」之间。",
-        "steps": [
-          {
-            "label": "成稿写出",
-            "text": "班次增加，一辆公交能载更多人",
-            "detail": "第二段用了公交与小汽车载客量的对比。这能支撑运力优势。",
-            "paragraph": 2,
-            "quote": "a bus can carry dozens of passengers at once"
-          },
-          {
-            "label": "提纲有，成稿缺",
-            "text": "等车更少，部分驾车者改乘公交",
-            "detail": "提纲的理由一同时写了等待时间与换乘。成稿没有说明谁会改变出行方式。",
-            "outline": 1,
-            "issue": "03"
-          },
-          {
-            "label": "成稿结论",
-            "text": "早高峰路上车辆变少",
-            "detail": "结论与题目相关。前面若只说明载客量，读者仍需自行补上从开车改乘公交的人。",
-            "issue": "03"
-          }
-        ]
-      },
-      {
-        "title": "从通学成本推到谁更容易上学",
-        "prompt": "先说清楚哪个群体的哪一种通学障碍变小，再判断你的结论能说到多大范围。",
-        "steps": [
-          {
-            "label": "成稿写出",
-            "text": "没车学生可能花较多钱打车",
-            "detail": "第三段把受影响的人和实际费用讲具体了。",
-            "paragraph": 3,
-            "quote": "spend a large part of their allowance on taxis"
-          },
-          {
-            "label": "成稿写出",
-            "text": "固定公交班次降低到校成本",
-            "detail": "前后两句已说明从交通条件到个人负担的联系。",
-            "paragraph": 3,
-            "quote": "With regular buses, getting to class becomes more affordable."
-          },
-          {
-            "label": "结论跳步",
-            "text": "从通学负担扩到整个城市更平等",
-            "detail": "这个例子支持无车学生更易到校。城市整体公平还包含原文没有展开的其他方面。",
-            "issue": "05"
-          }
-        ]
-      }
-    ],
     "thoughtSummary": [
       {
         "title": "有证据，就讲清它怎样支持结论",
@@ -437,6 +399,7 @@ window.studentPlatformSamples = [
       }
     ],
     "assessment": {
+      "band": "6.5",
       "criteria": [
         {
           "code": "TR",
@@ -458,9 +421,76 @@ window.studentPlatformSamples = [
           "score": 7,
           "text": "能用让步、关系从句和条件句表达范围，多数句子完整准确。arrive more frequent里修饰动作的词形需要调整。"
         }
-      ],
-      "band": "6.5"
+      ]
     },
-    "wordCount": 271
+    "wordCount": 271,
+    "mindmap": {
+      "title": "从提纲到成稿",
+      "note": "立场是优先投入公共交通，并保留必要的道路投入。",
+      "initial": "03",
+      "branches": [
+        {
+          "id": "traffic",
+          "label": "理由一",
+          "title": "为什么车流会减少",
+          "sequence": true,
+          "nodes": [
+            {
+              "id": "capacity",
+              "label": "成稿写到",
+              "title": "班次增加，公交能载更多人",
+              "detail": "第二段有公交与小汽车的载客量对比，能说明公共交通的运力优势。",
+              "paragraph": 2,
+              "quote": "a bus can carry dozens of passengers at once"
+            },
+            {
+              "id": "03",
+              "issue": "03",
+              "label": "成稿漏写中间一步",
+              "title": "省略了驾车者为什么换乘",
+              "detail": "提纲写到等车更少、原本开车的人改乘公交。成稿写出运力以后直接说早高峰会少车，把这个行为变化留给了读者。",
+              "think": "「能载更多人」和「路上有更少车」之间，得有一部分原来开车的人改变选择。想想什么会让他们愿意换乘。",
+              "action": "把提纲拆成四格，分别写班次变化、等车或可靠性变化、哪些人可能换乘、车流怎样变。用中文把第二格和第三格之间的关系说给别人听。",
+              "outline": 1
+            },
+            {
+              "id": "less-traffic",
+              "label": "成稿结论",
+              "title": "早高峰路上车会变少",
+              "detail": "结论回应了减少拥堵。它取决于前面遗漏的换乘环节，公交运力本身只说明有载客空间。",
+              "paragraph": 2,
+              "quote": "will therefore have fewer cars at rush hour"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "label": "理由二",
+          "title": "谁更容易到校",
+          "sequence": true,
+          "nodes": [
+            {
+              "id": "cost",
+              "label": "成稿写到",
+              "title": "定期公交减轻通学负担",
+              "detail": "原文给出了没车学生可能要打车的例子，并说明有规律的公交能降低到校成本。",
+              "paragraph": 3,
+              "quote": "With regular buses, getting to class becomes more affordable."
+            },
+            {
+              "id": "05",
+              "issue": "05",
+              "label": "结论范围太大",
+              "title": "从通学成本跳到整个城市更平等",
+              "detail": "例子讲清了部分无车学生的出行负担会降低。原句把结论扩到了全市公平，超出了这个例子说明的范围。",
+              "think": "先问这段证据具体讲了哪个群体、哪种不便。结论的对象和范围应当跟证据对得上。",
+              "action": "给例子标出「谁」「原来有什么障碍」「现在怎么变」。用这三项写一条中文结论，检查它是否还在说同一群人和同一种障碍。",
+              "outline": 2
+            }
+          ]
+        }
+      ]
+    },
+    "minimumMet": true
   }
 ];
